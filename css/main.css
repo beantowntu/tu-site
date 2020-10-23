@@ -100,11 +100,6 @@ textarea {
     margin: 48px auto;
   }
 
-  .banner {
-    width: 100%;
-    /*max-height: 400px;*/
-/*    max-width: 1564px;
-*/  }
 
   .script {
     border: 1px dashed red;
