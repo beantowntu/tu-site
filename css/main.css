@@ -82,13 +82,17 @@ textarea {
   max-width: 800px;
   margin: 48px auto; }
 
-.script {
-  border: 1px dashed red;
-  padding: 20px; }
-
 .form-container {
   width: 600px;
   margin: 0 auto; }
+
+.navbar {
+  background-color: white !important; }
+
+.navbar-nav.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%); }
 
 @media screen and (max-width: 800px) {
   .page-container {
