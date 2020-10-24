@@ -79,7 +79,7 @@ textarea {
   color: black; }
 
 .content-container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 48px auto; }
 
 .page-logo-container {
@@ -89,7 +89,7 @@ textarea {
   max-width: 300px; }
 
 .form-container {
-  width: 600px;
+  max-width: 600px;
   margin: 0 auto;
   text-align: center; }
 

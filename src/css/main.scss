@@ -94,10 +94,11 @@ textarea {
     padding: 0 60px;
     font-family: sans-serif;
     color: black;
+    // background: yellow;
   }
 
   .content-container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 48px auto;
   }
 
@@ -110,7 +111,7 @@ textarea {
   }
 
   .form-container {
-    width: 600px;
+    max-width: 600px;
     margin: 0 auto;
     text-align: center;
   }
