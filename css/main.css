@@ -101,6 +101,19 @@ textarea {
   left: 50%;
   transform: translatex(-50%); }
 
+.banner {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: #d43c3f;
+  color: white;
+  font-size: 18px;
+  min-height: 48px;
+  line-height: 36px;
+  margin: 48px 0;
+  padding: 12px; }
+
 .kyr-content {
   line-height: 1.4; }
 
