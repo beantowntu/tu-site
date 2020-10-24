@@ -75,7 +75,8 @@ textarea {
   max-width: 1400px;
   margin: 60px auto;
   padding: 0 60px;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  color: black; }
 
 .content-container {
   max-width: 800px;
@@ -89,7 +90,8 @@ textarea {
 
 .form-container {
   width: 600px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
 
 .navbar {
   background-color: white !important; }
