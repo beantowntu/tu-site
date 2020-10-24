@@ -108,7 +108,9 @@ textarea {
     padding: 0; }
   .content-container {
     max-width: 800px;
-    margin: 48px 16px; } }
+    margin: 48px 16px; }
+  .form-container {
+    padding-top: 48px; } }
 
 /* ==========================================================================
    Helper classes
