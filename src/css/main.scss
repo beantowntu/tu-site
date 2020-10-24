@@ -93,7 +93,6 @@ textarea {
     margin: 60px auto;
     padding: 0 60px;
     font-family: sans-serif;
-    background: yellow;
   }
 
   .content-container {
@@ -101,18 +100,22 @@ textarea {
     margin: 48px auto;
   }
 
+  .page-logo-container {
+    text-align: center
+  }
 
+  .page-logo {
+    max-width: 300px;
+  }
 
   .form-container {
     width: 600px;
     margin: 0 auto;
   }
 
-
   .navbar {
     background-color: white !important;
   }
-
 
   .navbar-nav.navbar-center { 
     position: absolute;

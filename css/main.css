@@ -75,12 +75,17 @@ textarea {
   max-width: 1400px;
   margin: 60px auto;
   padding: 0 60px;
-  font-family: sans-serif;
-  background: yellow; }
+  font-family: sans-serif; }
 
 .content-container {
   max-width: 800px;
   margin: 48px auto; }
+
+.page-logo-container {
+  text-align: center; }
+
+.page-logo {
+  max-width: 300px; }
 
 .form-container {
   width: 600px;
