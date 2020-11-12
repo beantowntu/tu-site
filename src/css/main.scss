@@ -148,6 +148,57 @@ textarea {
     line-height: 1.4;
   }
 
+  .flexrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+  }
+
+  .iconbutton:hover {
+    text-decoration: none;
+    color: white;
+  }
+  .iconbutton {
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+      width: 48px;
+      height: 48px;
+      margin-right: 5px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .calendar-button {
+    background-color: #465e8d;
+    padding-right: 13px; // account for margin in image
+  }
+
+  .fb-button {
+    // background-color: #1877f2;
+    background-color: #494949;
+    padding-right: 13px; // account for margin in image
+  }
+
+  ol li {
+    margin-bottom: 0.5rem;
+  }
+
   @media screen and (max-width: 800px) {
     .page-container {
       max-width: 100%;
