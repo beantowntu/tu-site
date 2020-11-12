@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Greater Boston Tenants Union</title>
+  <meta name="description" content="Safe, healthy, accessible housing is our collective right.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Greater Boston Tenants Union">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Worried about paying rent during the COVID-19 crisis? So are we.">
+  <meta property="og:url" content="https://bostontenantsunion.org">
+  <meta property="og:image" content="https://bostontenantsunion.org/img/gbtu-card-wide.png">
+
+  <meta name="twitter:title" content="Greater Boston Tenants Union">
+  <meta name="twitter:description" content="Worried about paying rent during the COVID-19 crisis? So are we.">
+  <meta property="twitter:url" content="https://bostontenantsunion.org">
+  <meta name="twitter:image" content="https://bostontenantsunion.org/img/gbtu-card-wide.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <meta name="theme-color" content="#f90a0e">
+</head>
+
+<body>
+
+  <div class="page-container">
+    <div class="container page-logo-container">
+      <a href="./">
+        <img class="page-logo mx-auto" src="/img/GBTU_LOGO_600px.png">
+      </a>
+    </div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        Menu <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="./know-your-rights.html">Know Your Rights</a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="./index.html#recruitmentForm">Organize With Us</a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="/es/index.html">en Español</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="content-container">
+      <h3>Joining and Paying Dues</h3>
+
+      <h4 class="mt-5 mb-4">Member dues are $5 per month. Sign up for a monthly payment:</h4>
+      <div id="paypal-button-container"></div>
+
+      <h4 class="mt-5 mb-4">If you're unemployed, you may join for $1 a month:</h4>
+      <div id="paypal-button-container-reduced"></div>
+
+
+      <div class="page-logo-container">
+        <br />
+        <a class="mt-4" href="./" >
+          <img class="page-logo mx-auto" src="/img/GBTU_LOGO_600px.png">
+        </a>
+      </div>
+
+
+    </div>
+
+
+  <script src="/js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="/js/vendor/jquery-3.5.1.slim.min.js"></script>
+  <script src="/js/vendor/bootstrap.bundle.min.js"></script>
+  <!-- <script src="js/main.js"></script> -->
+
+<script src="https://www.paypal.com/sdk/js?client-id=AY1TUarJO8yAM4jMNQs_Jw2HJSO-4mIUkyIUqnP8mVwNMOTT2_TIOgNAFqWvOw_AFykwnu3Ids6t8RNc&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+            shape: 'pill',
+            color: 'white',
+            layout: 'vertical',
+            label: 'subscribe'
+        },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          'plan_id': 'P-01E38965615597146L6NV4WQ'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID);
+      }
+  }).render('#paypal-button-container');
+  paypal.Buttons({
+    style: {
+        shape: 'pill',
+        color: 'white',
+        layout: 'vertical',
+        label: 'subscribe'
+    },
+    createSubscription: function(data, actions) {
+      return actions.subscription.create({
+        'plan_id': 'P-1UF60462HL997513HL6NVY7A'
+      });
+    },
+    onApprove: function(data, actions) {
+      alert(data.subscriptionID);
+    }
+}).render('#paypal-button-container-reduced');
+</script>
+
+</body>
+
+</html>
