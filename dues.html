@@ -97,7 +97,7 @@
         });
       },
       onApprove: function(data, actions) {
-        alert(data.subscriptionID);
+        alert('$5/month subscription successful!');
       }
   }).render('#paypal-button-container');
   paypal.Buttons({
@@ -113,7 +113,7 @@
       });
     },
     onApprove: function(data, actions) {
-      alert(data.subscriptionID);
+      alert('$1/month subscription successful!');
     }
 }).render('#paypal-button-container-reduced');
 </script>
