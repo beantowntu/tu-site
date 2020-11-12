@@ -53,9 +53,9 @@
 
             <!-- at a glance look at the next canvassing time -->
             <div class="banner"><span>
-                <b>Saturday, November 14th @ 12PM</b>
+                <b class="st-when">WHEN</b>
                 <br/>
-                 Forest Hills Station Parking Lot
+                <span class="st-where">WHERE</span>
             </span></div>
 
             <p>
@@ -78,7 +78,7 @@
 
             <div class="flexrow">
                 <a href="https://www.facebook.com/events/2567040816920430/"
-                   class="iconbutton fb-button">
+                   class="iconbutton fb-button st-fb">
                     <img alt="" src="/img/fb_logo_RGB-Blue_58.png"/>
                     <p>Join the Facebook Event!</p>
                 </a>
@@ -91,12 +91,12 @@
 
             <p>
                 We're meeting at
-                Forest Hills Station Parking Lot,
+                <span class="st-where">WHERE</span>,
                 get directions here:
             </p>
 
             <iframe width="100%" height="500" id="gmap_canvas"
-                    src="https://maps.google.com/maps?q=Forest%20Hills%20Station%20-%20Main&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    src=""
                     frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
             </iframe>
 
@@ -124,6 +124,20 @@
     <script src="/js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="/js/vendor/jquery-3.5.1.slim.min.js"></script>
     <script src="/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/calendar.js"></script>
+    <script>
+     SheetsTemplate.init({
+         id: '1-Bfzd9DQeJhr7_Dfe8N4niOJcvYQMqf132QyG6x5OVo',
+         tab: 1,
+         mappings: {
+             '.st-when':     { html: '1:2' },
+             '.st-where':    { html: '2:2' },
+             'a.st-fb':      { href: '3:2' },
+             '#gmap_canvas': { src:  '4:2' },
+         },
+     });
+    </script>
 </body>
 
 </html>
