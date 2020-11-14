@@ -25,6 +25,11 @@ window.SheetsTemplate = {
                     }
                 }
             }
+
+            // do callbacks
+            params.callbacks.forEach(function(cb) {
+                cb(contents);
+            });
         };
 
         // load data via JSONP

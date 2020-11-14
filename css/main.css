@@ -135,6 +135,7 @@ textarea {
   margin-left: 10px;
   margin-right: 10px;
   color: white;
+  background-color: grey;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -146,6 +147,15 @@ textarea {
     margin-right: 5px; }
   .iconbutton p {
     margin: 0; }
+
+a.iconbutton.cal-link {
+  padding-right: 8px;
+  margin-top: -0.5rem;
+  background-color: #26334d; }
+  a.iconbutton.cal-link img {
+    padding: 2px;
+    width: 32px;
+    height: 32px; }
 
 .calendar-button {
   background-color: #465e8d;
