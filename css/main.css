@@ -168,6 +168,15 @@ a.iconbutton.cal-link {
 ol li {
   margin-bottom: 0.5rem; }
 
+.caption {
+  text-align: left !important;
+  justify-content: left !important;
+  position: relative;
+  left: 100px;
+  font-size: 14px;
+  font-family: Helvetica, sans-serif;
+  color: darkgray; }
+
 @media screen and (max-width: 800px) {
   .page-container {
     max-width: 100%;
