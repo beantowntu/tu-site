@@ -35,49 +35,17 @@
         </div>
 
         <div class="content-container">
-            <p>
-            Want to help build tenant power and liberate the people from their landlord?
-            Come organize with us!
-            We're helping tenants fight evictions, building tenant unions, and spreading the
-            word about the power of the people over capital.
-            The best way to get involved is to come out to an action with us,
-            we often have trainings for anyone new to this type of organizing.
-            <b>If you plan on attending, you must fill out
-            <a href="#recruitmentForm">the form below</a></b>,
-            both for our organization and headcount as well as giving you some
-            information or training before you go out.
-            <br/><br/>
-
-            Our next major action is scheduled for:
-            </p>
+            <h1 id="title"></h1>
 
             <!-- at a glance look at the next canvassing time -->
             <div class="banner"><span>
                 <b class="st-when">WHEN</b>
-                <br/>
-                <span class="st-where">WHERE</span>
+                <!-- we don't currently publish the location publicly -->
+                <span class="st-where" style="display:none;">WHERE</span>
             </span></div>
 
-            <p>
-                What are we doing?
-                <ol>
-                    <li><b>Eviction Defense!</b> (if there are enough evictions on public record)</li>
-                    <li><b>Tenant Union Building!</b> (growing long term relationships with tenants)</li>
-                    <li><b>Tabling &amp; Flyering</b> to get the message out!</li>
-                </ol>
-            </p>
-
-
-            <p>
-            If that sounds good to you, come out with us.
-            You can save the event details on Facebook or on your Calendar, but
-            we have to be ready to change course when we receive new eviction data
-            <b>so the meeting time and place may change</b>, just watch this page
-            or listen to a communication from us.
-            </p>
-
             <div class="flexrow">
-                <a href="https://www.facebook.com/events/2567040816920430/"
+                <a href=""
                    class="iconbutton fb-button st-fb" target="_blank">
                     <img alt="" src="/img/fb_logo_RGB-Blue_58.png"/>
                     <p>Join the Facebook Event!</p>
@@ -126,8 +94,8 @@
             </p>
 
             <div class="form-container" id="recruitmentForm">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJXP_k__kfI7oWpiZqmwEN8fhcJsfIajrDb5Ct3xz0m1U_5Q/viewform"
-                        width="100%" height="2000" frameborder="0"
+              <iframe src=""
+                        width="100%" height="2000" frameborder="0" id="rsvp-form"
                         marginheight="0" marginwidth="0">Loading…
                 </iframe>
             </div>
@@ -139,42 +107,78 @@
             </p>
         </div>
     </div>
-    <script src="/js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    <script> var exports = {}; // quick fix because 'exports' is not defined in rich-text bundle below </script>
+    <script src="https://unpkg.com/@contentful/rich-text-html-renderer@12.0.0/dist/rich-text-html-renderer.es5.js"></script>
     <script src="/js/vendor/jquery-3.5.1.slim.min.js"></script>
-    <script src="/js/vendor/bootstrap.bundle.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="/js/calendar.js"></script>
     <script>
-     SheetsTemplate.init({
-         id: '1-Bfzd9DQeJhr7_Dfe8N4niOJcvYQMqf132QyG6x5OVo',
-         tab: 1,
-         mappings: {
-             '.st-when':     { html: '1:2' },
-             '.st-where':    { html: '2:2' },
-             'a.st-fb':      { href: '3:2' },
-             '#gmap_canvas': { src:  '4:2' },
-         },
-         callbacks: [
-             function(contents) {
-                 var callinks = generateCalendars({
-                     title: contents['6:2'],
-                     start: new Date(contents['7:2']),
-                     end: new Date(contents['8:2']),
-                     address: contents['9:2'],
-                     description: contents['10:2'],
-                 });
-                 $('a.cal-link.google').attr('href',  callinks.google);
-                 $('a.cal-link.ical').attr('href',    callinks.ical);
-                 $('a.cal-link.yahoo').attr('href',   callinks.yahoo);
-                 $('a.cal-link.outlook').attr('href', callinks.outlook);
-             },
-         ],
+     // load contentful client
+     var client = contentful.createClient({
+         space: 'zj5yev79foye',
+         accessToken: 'My0shCkOrXwJ4tYi4ce-QUkgGVSgYTFR8taZ1qlhJDg',
+     });
+
+     // get single event and process it
+     var event = client.getEntries({
+         'metadata.tags.sys.id[in]': 'evictionDefense',
+         'content_type': 'event',
+         'order': '-fields.start',
+         'limit': 1,
+     }
+     ).then(function(entries) {
+         // unpack only entry
+         var entry = entries.items[0];
+         // render description as html
+         var html = documentToHtmlString(entry.fields.description);
+         // create calendar links
+         var callinks = generateCalendars({
+             title: entry.fields.name,
+             start: new Date(entry.fields.start),
+             end: new Date(entry.fields.end),
+             address: entry.fields.location,
+             description: window.location.href,
+         });
+         // only return the content for templating
+         entry.fields.description = html;
+         entry.fields.callinks = callinks;
+         return entry.fields;
+     }
+     ).catch(function(error) {
+         // not much to do with errors
+         console.log('contentful error', error);
      });
 
      // calendar expanding button
      $('div.calendar-submenu').hide();
      $('a.calendar-button').click(function() {
          $('div.calendar-submenu').toggle();
+     });
+
+     // fill in templates once page loads
+     $(document).ready(function() {
+         event.then(function(data) {
+             var start = new Date(data.start);
+             var date = start.toLocaleDateString('en-us', {
+                 weekday: 'long',
+                 month: 'long',
+                 day: 'numeric',
+                 hour: 'numeric',
+                 minute: 'numeric',
+             });
+
+             $('#title').html(                    data.name);
+             $(data.description).insertAfter(     '#title');
+             $('a.fb-button').attr('href',        data.facebook);
+             $('#rsvp-form').attr('src',          data.form);
+             $('.st-when').html(                  date);
+             $('.st-where').html(                 data.location);
+             $('a.cal-link.google').attr('href',  data.callinks.google);
+             $('a.cal-link.ical').attr('href',    data.callinks.ical);
+             $('a.cal-link.yahoo').attr('href',   data.callinks.yahoo);
+             $('a.cal-link.outlook').attr('href', data.callinks.outlook);
+         });
      });
     </script>
 </body>
