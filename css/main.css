@@ -176,6 +176,21 @@ ol li {
   font-family: Helvetica, sans-serif;
   color: darkgray; }
 
+
+/* MailChimp */
+#mc_embed_signup form input[type=text] {
+  display: none;
+}
+#mc_embed_signup form {
+  display: flex;
+  font-size: 20px;
+}
+#mc_embed_signup form input[type=email] {
+  width: 100%;
+  margin: 0 1rem 0 0;
+}
+
+
 @media screen and (max-width: 800px) {
   .page-container {
     max-width: 100%;
