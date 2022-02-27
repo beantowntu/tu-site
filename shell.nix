@@ -1,6 +1,8 @@
 with import <nixpkgs> {};
 
 mkShell {
+  name = "bostontenantsunion.org";
+
   packages = [
     nodejs-14_x
   ];
