@@ -93,6 +93,14 @@ textarea {
   margin: 0 auto;
   text-align: center; }
 
+#press .row .col-3 {
+  background-size: cover;
+  background-position: center;
+  width: 300px; }
+
+#press {
+  max-width: 800px; }
+
 .navbar {
   background-color: white !important; }
 
@@ -130,6 +138,7 @@ textarea {
 .iconbutton {
   padding: 5px;
   border-radius: 3px;
+  margin-top: 1rem;
   margin-bottom: 2rem;
   margin-left: 10px;
   margin-right: 10px;
@@ -175,21 +184,6 @@ ol li {
   font-size: 14px;
   font-family: Helvetica, sans-serif;
   color: darkgray; }
-
-
-/* MailChimp */
-#mc_embed_signup form input[type=text] {
-  display: none;
-}
-#mc_embed_signup form {
-  display: flex;
-  font-size: 20px;
-}
-#mc_embed_signup form input[type=email] {
-  width: 100%;
-  margin: 0 1rem 0 0;
-}
-
 
 @media screen and (max-width: 800px) {
   .page-container {
